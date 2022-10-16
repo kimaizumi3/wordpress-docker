@@ -16,6 +16,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::751312769524:role/github-actions
-          aws-region: ap-northeast-1
-      - run: aws sts get-caller-identity
+          role-to-assume: arn:aws:iam::887950889817:role/github-actions
+          aws-region: ${{env.AWS_REGIONS}}
+      - run: aws sts get-caller-identity 
