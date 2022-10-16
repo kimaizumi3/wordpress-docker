@@ -18,9 +18,10 @@ jobs:
   get-caller-identity:
     runs-on: ubuntu-latest 
     steps:
-      - name: Configure AWS credentials for prod
+      - name: checkout
       #  if: github.ref == 'refs/heads/main'
         uses: actions/checkout@v2
+      - name: Configure AWS credentials for prod
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/github-actions
