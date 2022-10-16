@@ -5,12 +5,14 @@ on:
     branches:
       - main
       # - develop
-env:
-  AWS_REGION: ap-northeast-1
 
 permissions:
   id-token: write
   contents: read # actions/checkout のために必要
+
+env:
+  AWS_REGION: ap-northeast-1
+
 
 jobs:
   get-caller-identity:
