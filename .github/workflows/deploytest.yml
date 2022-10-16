@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      # - develop
+      - develop
 
 permissions:
   id-token: write
@@ -26,6 +26,7 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/github-actions
           aws-region: ap-northeast-1    # ${{ env.AWS_REGION }} 
+      - name: credential
         run: aws sts get-caller-identity 
 
       #- name: Configure AWS credentials for dev
