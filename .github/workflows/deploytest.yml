@@ -10,8 +10,8 @@ permissions:
   id-token: write
   contents: read # actions/checkout のために必要
 
-env:
-  AWS_REGION: ap-northeast-1
+# env:
+#  AWS_REGION: ap-northeast-1
 
 
 jobs:
@@ -24,7 +24,7 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/github-actions
-          aws-region: ${{ env.AWS_REGION }} 
+          aws-region: ap-northeast-1    # ${{ env.AWS_REGION }} 
       - run: aws sts get-caller-identity 
 
       #- name: Configure AWS credentials for dev
